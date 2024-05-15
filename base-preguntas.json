@@ -7,8 +7,45 @@
     "incorrecta1": "Picasso",
     "incorrecta2": "Miguel Angel",
     "incorrecta3": "Monet",
-    "imagen": "/img/monaLisa.jpg",
-    "object_fit": "cover"
+    "imagen": "/img/monaLisa.jpg"
+},
+
+{
+    "categoria": "Arte y Literatura",
+    "pregunta": "¿Quién escribió 'Cien años de soledad'?",
+    "respuesta": "Gabriel García Márquez",
+    "incorrecta1": "Pablo Neruda",
+    "incorrecta2": "Mario Vargas Llosa",
+    "incorrecta3": "Jorge Luis Borges",
+    "imagen": "/img/cienaniosdesoledad.jpg"
+},
+
+{
+    "categoria": "Arte y Literatura",
+    "pregunta": "¿Quién pintó 'La noche estrellada'?",
+    "respuesta": "Vincent van Gogh",
+    "incorrecta1": "Pablo Picasso",
+    "incorrecta2": "Claude Monet",
+    "incorrecta3": "Salvador Dalí",
+    "imagen": "/img/lanocheestrellada.jpg"
+},
+{
+    "categoria": "Arte y Literatura",
+    "pregunta": "¿Quién escribió 'Don Quijote de la Mancha'?",
+    "respuesta": "Miguel de Cervantes",
+    "incorrecta1": "Federico García Lorca",
+    "incorrecta2": "Javier Marías",
+    "incorrecta3": "Lope de Vega",
+    "imagen": "/img/donQuijote.jpg"
+},
+{
+    "categoria": "Arte y Literatura",
+    "pregunta": "¿Quién escribió 'Hamlet'?",
+    "respuesta": "William Shakespeare",
+    "incorrecta1": "Jane Austen",
+    "incorrecta2": "Charles Dickens",
+    "incorrecta3": "Fyodor Dostoevsky",
+    "imagen": "/img/hamlet.jpg"
 }
 
 
