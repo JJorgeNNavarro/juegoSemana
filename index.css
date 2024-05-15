@@ -2,16 +2,16 @@
     transition: all 0.3s;
 }
 body{
-    background-color: slategray;
+    background-color: black;
     padding: 0;
     margin: 0;
     text-align: center;
     }
 
 .contenedor{
-            width: 98vw;
-            height: 97vh;
-            display: inline-flex;
+            width: 95vw;
+            height: 100vh;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -19,33 +19,37 @@ body{
             border-color: black;
             }
 .encabezado{
-    background-color: white;
+    background-color: rgb(138, 138, 138,0.8);
     min-width: 300px;
-    width: 70%;
+    width: 40%;
     padding: 10px;
+    border-radius: 8px;
 }
 .categoria{
     text-align: left;
-    opacity: 0.3;
-    background-color: aqua;
+    opacity: 0.8;
+    
 }
 .pregunta{
     padding: 10px;
+    text-decoration: bold;
 }
 
 .imagen{
-    object-fit: cover;
-    height: 200px;
+    height: 450px;
     width: 100%;
+    border-radius: 8px;
+
 }
 .btn{
-    background: white;
-    width: 60%;
+    background-color: rgb(138, 138, 138,0.8);
+    width: 35%;
     padding: 10px;
     margin: 5px;
+    border-radius: 8px;
 }
 .btn:hover{
-    background: blue;
+    background: white;
     cursor: pointer;
     transform: scale(1.05);
 }

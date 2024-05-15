@@ -2,12 +2,12 @@
 
 {
     "categoria": "Arte y Literatura",
-    "pregunta": "quien pintó la mona lisa?",
+    "pregunta": "Quien pintó la mona lisa?",
     "respuesta": "Leonardo da Vinci",
     "incorrecta1": "Picasso",
     "incorrecta2": "Miguel Angel",
     "incorrecta3": "Monet",
-    "imagen": "",
+    "imagen": "/img/monaLisa.jpg",
     "object_fit": "cover"
 }
 
