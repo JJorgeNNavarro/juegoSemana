@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 contadores[`jugador${jugadorActual}`]++;
                 actualizarContador(jugadorActual);
               }
+              jugadorActual = null; // Reiniciar la selección del jugador después de responder
               cargarPregunta(); // Cargar una nueva pregunta después de responder
             } else {
               alert("Por favor, selecciona un jugador antes de responder.");
@@ -64,17 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error al cargar las preguntas:", error));
   }
 
-  document.getElementById("seleccionarJugador").onclick = function () {
-    const jugadorSeleccionado = prompt(
-      "Ingrese el número del jugador (1 o 2):"
-    );
-    if (jugadorSeleccionado === "1" || jugadorSeleccionado === "2") {
-      jugadorActual = parseInt(jugadorSeleccionado);
+  // Manejar la selección del jugador
+  document.querySelectorAll(".seleccionar-jugador").forEach((button) => {
+    button.onclick = function () {
+      jugadorActual = button.dataset.jugador;
       alert(`Es el turno del Jugador ${jugadorActual}`);
-    } else {
-      alert("Entrada inválida. Por favor, ingrese 1 o 2.");
-    }
-  };
+    };
+  });
 
   cargarPregunta(); // Cargar la primera pregunta al iniciar
 });

@@ -31,11 +31,20 @@ body {
     width: 45%;
 }
 
-#seleccionarJugador {
-    margin-bottom: 20px;
-    padding: 10px 20px;
+.seleccionar-jugador {
+    margin-top: 10px;
+    padding: 15px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.seleccionar-jugador:hover {
+    background-color: #0056b3;
 }
 
 .encabezado {
