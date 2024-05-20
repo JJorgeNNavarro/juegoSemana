@@ -18,10 +18,27 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 600px;
+    text-align: center;
+}
+
+.jugadores {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.jugador {
+    width: 45%;
+}
+
+#seleccionarJugador {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .encabezado {
-    text-align: center;
     margin-bottom: 20px;
 }
 

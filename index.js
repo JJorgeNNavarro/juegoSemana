@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Función para mezclar un arreglo
+  let jugadorActual = null; // Jugador que está respondiendo, null al inicio
+  const contadores = {
+    jugador1: 0,
+    jugador2: 0,
+  };
+
   function mezclarArreglo(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -8,44 +13,68 @@ document.addEventListener("DOMContentLoaded", function () {
     return array;
   }
 
-  // Cargar el archivo JSON de preguntas
-  fetch("base-preguntas.json")
-    .then((response) => response.json())
-    .then((data) => {
-      // Seleccionar una pregunta aleatoria del JSON
-      const pregunta = data[Math.floor(Math.random() * data.length)];
+  function actualizarContador(jugador) {
+    document.getElementById(`contador${jugador}`).textContent =
+      contadores[`jugador${jugador}`];
+  }
 
-      // Crear un arreglo con todas las respuestas
-      const respuestas = [
-        { texto: pregunta.respuesta, correcta: true },
-        { texto: pregunta.incorrecta1, correcta: false },
-        { texto: pregunta.incorrecta2, correcta: false },
-        { texto: pregunta.incorrecta3, correcta: false },
-      ];
+  function cargarPregunta() {
+    fetch("base-preguntas.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const pregunta = data[Math.floor(Math.random() * data.length)];
+        const respuestas = [
+          { texto: pregunta.respuesta, correcta: true },
+          { texto: pregunta.incorrecta1, correcta: false },
+          { texto: pregunta.incorrecta2, correcta: false },
+          { texto: pregunta.incorrecta3, correcta: false },
+        ];
+        const respuestasMezcladas = mezclarArreglo(respuestas);
 
-      // Mezclar el arreglo de respuestas
-      const respuestasMezcladas = mezclarArreglo(respuestas);
+        document.querySelector(".categoria").textContent = pregunta.categoria;
+        document.querySelector(".pregunta").textContent =
+          "Pregunta: " + pregunta.pregunta;
 
-      // Mostrar la pregunta en el HTML
-      document.querySelector(".categoria").textContent = pregunta.categoria;
-      document.querySelector(".pregunta").textContent =
-        "Pregunta: " + pregunta.pregunta;
+        respuestasMezcladas.forEach((respuesta, index) => {
+          const boton = document.querySelector(`.btn#btn${index + 1}`);
+          boton.textContent = respuesta.texto;
+          boton.dataset.correcta = respuesta.correcta;
+          boton.onclick = function () {
+            if (jugadorActual !== null) {
+              // Solo permitir responder si se ha seleccionado un jugador
+              if (respuesta.correcta) {
+                contadores[`jugador${jugadorActual}`]++;
+                actualizarContador(jugadorActual);
+              }
+              cargarPregunta(); // Cargar una nueva pregunta después de responder
+            } else {
+              alert("Por favor, selecciona un jugador antes de responder.");
+            }
+          };
+        });
 
-      // Mostrar las respuestas mezcladas en los botones
-      respuestasMezcladas.forEach((respuesta, index) => {
-        const boton = document.querySelector(`.btn#btn${index + 1}`);
-        boton.textContent = respuesta.texto;
-        boton.dataset.correcta = respuesta.correcta; // Guarda si la respuesta es correcta o no
-      });
+        const imagenElement = document.querySelector(".imagen");
+        if (pregunta.imagen) {
+          imagenElement.src = pregunta.imagen;
+          imagenElement.style.display = "block";
+        } else {
+          imagenElement.style.display = "none";
+        }
+      })
+      .catch((error) => console.error("Error al cargar las preguntas:", error));
+  }
 
-      // Mostrar la imagen en el HTML si existe
-      const imagenElement = document.querySelector(".imagen");
-      if (pregunta.imagen) {
-        imagenElement.src = pregunta.imagen;
-        imagenElement.style.display = "block"; // Asegúrate de mostrar la imagen si está presente
-      } else {
-        imagenElement.style.display = "none"; // Oculta la imagen si no hay una ruta proporcionada
-      }
-    })
-    .catch((error) => console.error("Error al cargar las preguntas:", error));
+  document.getElementById("seleccionarJugador").onclick = function () {
+    const jugadorSeleccionado = prompt(
+      "Ingrese el número del jugador (1 o 2):"
+    );
+    if (jugadorSeleccionado === "1" || jugadorSeleccionado === "2") {
+      jugadorActual = parseInt(jugadorSeleccionado);
+      alert(`Es el turno del Jugador ${jugadorActual}`);
+    } else {
+      alert("Entrada inválida. Por favor, ingrese 1 o 2.");
+    }
+  };
+
+  cargarPregunta(); // Cargar la primera pregunta al iniciar
 });
