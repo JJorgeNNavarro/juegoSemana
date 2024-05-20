@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let jugadorActual = null; // Jugador que está respondiendo, null al inicio
-  const contadores = {
-    jugador1: 0,
-    jugador2: 0,
-  };
+  let jugadorActual = null;
+  let puntuacionJugador1 = 0;
+  let puntuacionJugador2 = 0;
+  let respuestaCorrecta = "";
 
   function mezclarArreglo(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -13,9 +12,27 @@ document.addEventListener("DOMContentLoaded", function () {
     return array;
   }
 
-  function actualizarContador(jugador) {
-    document.getElementById(`contador${jugador}`).textContent =
-      contadores[`jugador${jugador}`];
+  function seleccionarJugador(event) {
+    jugadorActual = event.target.dataset.jugador;
+    alert("Jugador " + jugadorActual + " ha sido seleccionado.");
+  }
+
+  function verificarGanador() {
+    if (puntuacionJugador1 >= 5) {
+      alert("¡Jugador 1 gana la partida!");
+      resetearJuego();
+    } else if (puntuacionJugador2 >= 5) {
+      alert("¡Jugador 2 gana la partida!");
+      resetearJuego();
+    }
+  }
+
+  function resetearJuego() {
+    puntuacionJugador1 = 0;
+    puntuacionJugador2 = 0;
+    document.getElementById("contador1").textContent = puntuacionJugador1;
+    document.getElementById("contador2").textContent = puntuacionJugador2;
+    cargarPregunta();
   }
 
   function cargarPregunta() {
@@ -23,36 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         const pregunta = data[Math.floor(Math.random() * data.length)];
-        const respuestas = [
-          { texto: pregunta.respuesta, correcta: true },
-          { texto: pregunta.incorrecta1, correcta: false },
-          { texto: pregunta.incorrecta2, correcta: false },
-          { texto: pregunta.incorrecta3, correcta: false },
-        ];
-        const respuestasMezcladas = mezclarArreglo(respuestas);
+        respuestaCorrecta = pregunta.respuesta; // Guardar la respuesta correcta
+        const respuestas = mezclarArreglo([
+          pregunta.respuesta,
+          pregunta.incorrecta1,
+          pregunta.incorrecta2,
+          pregunta.incorrecta3,
+        ]);
 
         document.querySelector(".categoria").textContent = pregunta.categoria;
         document.querySelector(".pregunta").textContent =
           "Pregunta: " + pregunta.pregunta;
-
-        respuestasMezcladas.forEach((respuesta, index) => {
-          const boton = document.querySelector(`.btn#btn${index + 1}`);
-          boton.textContent = respuesta.texto;
-          boton.dataset.correcta = respuesta.correcta;
-          boton.onclick = function () {
-            if (jugadorActual !== null) {
-              // Solo permitir responder si se ha seleccionado un jugador
-              if (respuesta.correcta) {
-                contadores[`jugador${jugadorActual}`]++;
-                actualizarContador(jugadorActual);
-              }
-              jugadorActual = null; // Reiniciar la selección del jugador después de responder
-              cargarPregunta(); // Cargar una nueva pregunta después de responder
-            } else {
-              alert("Por favor, selecciona un jugador antes de responder.");
-            }
-          };
-        });
+        document.querySelector(".btn#btn1").textContent = respuestas[0];
+        document.querySelector(".btn#btn2").textContent = respuestas[1];
+        document.querySelector(".btn#btn3").textContent = respuestas[2];
+        document.querySelector(".btn#btn4").textContent = respuestas[3];
 
         const imagenElement = document.querySelector(".imagen");
         if (pregunta.imagen) {
@@ -61,17 +63,42 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           imagenElement.style.display = "none";
         }
+
+        document.querySelectorAll(".btn").forEach((button) => {
+          button.onclick = verificarRespuesta;
+        });
       })
       .catch((error) => console.error("Error al cargar las preguntas:", error));
   }
 
-  // Manejar la selección del jugador
+  function verificarRespuesta(event) {
+    if (!jugadorActual) {
+      alert("Por favor, selecciona un jugador antes de responder.");
+      return;
+    }
+
+    const respuestaSeleccionada = event.target.textContent;
+    console.log("La respuesta seleccionada es: " + respuestaSeleccionada);
+    console.log("La respuesta correcta es: " + respuestaCorrecta);
+
+    if (respuestaSeleccionada === respuestaCorrecta) {
+      if (jugadorActual === "1") {
+        puntuacionJugador1++;
+        document.getElementById("contador1").textContent = puntuacionJugador1;
+      } else if (jugadorActual === "2") {
+        puntuacionJugador2++;
+        document.getElementById("contador2").textContent = puntuacionJugador2;
+      }
+    }
+
+    jugadorActual = null; // Resetear jugador actual después de responder
+    verificarGanador();
+    cargarPregunta();
+  }
+
   document.querySelectorAll(".seleccionar-jugador").forEach((button) => {
-    button.onclick = function () {
-      jugadorActual = button.dataset.jugador;
-      alert(`Es el turno del Jugador ${jugadorActual}`);
-    };
+    button.addEventListener("click", seleccionarJugador);
   });
 
-  cargarPregunta(); // Cargar la primera pregunta al iniciar
+  cargarPregunta();
 });
