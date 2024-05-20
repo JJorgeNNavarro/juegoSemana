@@ -36,6 +36,60 @@
         "imagen": "/img/hamlet.jpg"
     },
     {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'El principito'?",
+        "respuesta": "Antoine de Saint-Exupéry",
+        "incorrecta1": "J.R.R. Tolkien",
+        "incorrecta2": "Fyodor Dostoevsky",
+        "incorrecta3": "Gabriel García Márquez",
+        "imagen": "/img/elPrincipito.jpg"
+    },  
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién pintó 'Guernica'?",
+        "respuesta": "Pablo Picasso",
+        "incorrecta1": "Vincent van Gogh",
+        "incorrecta2": "Leonardo da Vinci",
+        "incorrecta3": "Salvador Dalí",
+        "imagen": "/img/guernica.jpg"
+    },      
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'Moby Dick'?",
+        "respuesta": "Herman Melville",
+        "incorrecta1": "Mark Twain",
+        "incorrecta2": "Charles Dickens",
+        "incorrecta3": "Emily Dickinson",
+        "imagen": "/img/mobyDick.jpg"
+    },    
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién es el autor de la obra 'Romeo y Julieta'?",
+        "respuesta": "William Shakespeare",
+        "incorrecta1": "Oscar Wilde",
+        "incorrecta2": "Jane Austen",
+        "incorrecta3": "Miguel de Cervantes",
+        "imagen": "/img/romeoYJulieta.jpg"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'La Odisea'?",
+        "respuesta": "Homero",
+        "incorrecta1": "Virgilio",
+        "incorrecta2": "Platón",
+        "incorrecta3": "Aristóteles",
+        "imagen": "/img/laOdisea.jpg"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Cuál es el nombre del autor de 'Crimen y Castigo'?",
+        "respuesta": "Fyodor Dostoevsky",
+        "incorrecta1": "Leo Tolstoy",
+        "incorrecta2": "Franz Kafka",
+        "incorrecta3": "George Orwell",
+        "imagen": "/img/crimenYCastigo.jpg"
+    },    
+    {
         "categoria": "Deporte",
         "pregunta": "¿En qué deporte se utiliza una raqueta y una pelota amarilla?",
         "respuesta": "Tenis",
@@ -50,7 +104,8 @@
         "respuesta": "Fútbol",
         "incorrecta1": "Rugby",
         "incorrecta2": "Hockey",
-        "incorrecta3": "Baloncesto"
+        "incorrecta3": "Baloncesto",
+        "imagen": "/img/deportes.jpg"
     },
     {
         "categoria": "Deporte",
@@ -58,7 +113,8 @@
         "respuesta": "Baloncesto",
         "incorrecta1": "Fútbol americano",
         "incorrecta2": "Golf",
-        "incorrecta3": "Béisbol"
+        "incorrecta3": "Béisbol",
+        "imagen": "/img/jordan.jpg"
     },
     {
         "categoria": "Deporte",
@@ -66,7 +122,8 @@
         "respuesta": "Francia",
         "incorrecta1": "Brasil",
         "incorrecta2": "Alemania",
-        "incorrecta3": "Argentina"
+        "incorrecta3": "Argentina",
+        "imagen": "/img/copadelmundo.jpg"
     },
     {
         "categoria": "Deporte",
@@ -74,7 +131,8 @@
         "respuesta": "Fútbol americano",
         "incorrecta1": "Béisbol",
         "incorrecta2": "Baloncesto",
-        "incorrecta3": "Hockey sobre hielo"
+        "incorrecta3": "Hockey sobre hielo",
+        "imagen": "/img/deportesUsa.jpg"
     },
     {
         "categoria": "Deporte",
@@ -82,7 +140,8 @@
         "respuesta": "Chicago Bulls",
         "incorrecta1": "Los Angeles Lakers",
         "incorrecta2": "Boston Celtics",
-        "incorrecta3": "Miami Heat"
+        "incorrecta3": "Miami Heat",
+        "imagen": "/img/nba.jpg"
     },
     {
         "categoria": "Deporte",
@@ -90,7 +149,8 @@
         "respuesta": "6",
         "incorrecta1": "5",
         "incorrecta2": "7",
-        "incorrecta3": "4"
+        "incorrecta3": "4",
+        "imagen": "/img/voley.jpg"
     },
     {
         "categoria": "Deporte",
@@ -98,7 +158,8 @@
         "respuesta": "Alemania",
         "incorrecta1": "Brasil",
         "incorrecta2": "Argentina",
-        "incorrecta3": "España"
+        "incorrecta3": "España",
+        "imagen": "/img/copadelmundo.jpg"
     },
     {
         "categoria": "Deporte",
@@ -106,7 +167,8 @@
         "respuesta": "Pelé",
         "incorrecta1": "Lionel Messi",
         "incorrecta2": "Cristiano Ronaldo",
-        "incorrecta3": "Diego Maradona"
+        "incorrecta3": "Diego Maradona",
+        "imagen": "/img/goleador.jpg"
     },
     {
         "categoria": "Deporte",
@@ -114,7 +176,8 @@
         "respuesta": "Patinaje de velocidad",
         "incorrecta1": "Patinaje artístico",
         "incorrecta2": "Hockey sobre hielo",
-        "incorrecta3": "Patinaje artístico sobre hielo"
+        "incorrecta3": "Patinaje artístico sobre hielo",
+        "imagen": "/img/canchahockey.jpg"
     }
 ]
 
