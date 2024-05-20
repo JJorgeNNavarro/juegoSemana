@@ -17,18 +17,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
-    max-width: 600px;
-    text-align: center;
+    max-width: 800px; /* Aumentado para dar espacio a los jugadores */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .jugadores {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    width: 20%;
+    padding: 2%;    
 }
 
 .jugador {
-    width: 45%;
+    text-align: center;
 }
 
 .seleccionar-jugador {
@@ -45,6 +46,11 @@ body {
 
 .seleccionar-jugador:hover {
     background-color: #0056b3;
+}
+
+.preguntas {
+    width: 60%; /* Ajustado para dar espacio a los jugadores */
+    text-align: center;
 }
 
 .encabezado {

@@ -1,56 +1,125 @@
 [
-
-{
-    "categoria": "Arte y Literatura",
-    "pregunta": "Quien pintó la mona lisa?",
-    "respuesta": "Leonardo da Vinci",
-    "incorrecta1": "Picasso",
-    "incorrecta2": "Miguel Angel",
-    "incorrecta3": "Monet",
-    "imagen": "/img/monaLisa.jpg"
-},
-
-{
-    "categoria": "Arte y Literatura",
-    "pregunta": "¿Quién escribió 'Cien años de soledad'?",
-    "respuesta": "Gabriel García Márquez",
-    "incorrecta1": "Pablo Neruda",
-    "incorrecta2": "Mario Vargas Llosa",
-    "incorrecta3": "Jorge Luis Borges",
-    "imagen": "/img/cienaniosdesoledad.jpg"
-},
-
-{
-    "categoria": "Arte y Literatura",
-    "pregunta": "¿Quién pintó 'La noche estrellada'?",
-    "respuesta": "Vincent van Gogh",
-    "incorrecta1": "Pablo Picasso",
-    "incorrecta2": "Claude Monet",
-    "incorrecta3": "Salvador Dalí",
-    "imagen": "/img/lanocheestrellada.jpg"
-},
-{
-    "categoria": "Arte y Literatura",
-    "pregunta": "¿Quién escribió 'Don Quijote de la Mancha'?",
-    "respuesta": "Miguel de Cervantes",
-    "incorrecta1": "Federico García Lorca",
-    "incorrecta2": "Javier Marías",
-    "incorrecta3": "Lope de Vega",
-    "imagen": "/img/donQuijote.jpg"
-},
-{
-    "categoria": "Arte y Literatura",
-    "pregunta": "¿Quién escribió 'Hamlet'?",
-    "respuesta": "William Shakespeare",
-    "incorrecta1": "Jane Austen",
-    "incorrecta2": "Charles Dickens",
-    "incorrecta3": "Fyodor Dostoevsky",
-    "imagen": "/img/hamlet.jpg"
-}
-
-
-
-
-
-
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'Cien años de soledad'?",
+        "respuesta": "Gabriel García Márquez",
+        "incorrecta1": "Pablo Neruda",
+        "incorrecta2": "Mario Vargas Llosa",
+        "incorrecta3": "Jorge Luis Borges",
+        "imagen": "/img/cienaniosdesoledad.jpg"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién pintó 'La noche estrellada'?",
+        "respuesta": "Vincent van Gogh",
+        "incorrecta1": "Pablo Picasso",
+        "incorrecta2": "Claude Monet",
+        "incorrecta3": "Salvador Dalí",
+        "imagen": "/img/lanocheestrellada.jpg"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'Don Quijote de la Mancha'?",
+        "respuesta": "Miguel de Cervantes",
+        "incorrecta1": "Federico García Lorca",
+        "incorrecta2": "Javier Marías",
+        "incorrecta3": "Lope de Vega",
+        "imagen": "/img/donQuijote.jpg"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién escribió 'Hamlet'?",
+        "respuesta": "William Shakespeare",
+        "incorrecta1": "Jane Austen",
+        "incorrecta2": "Charles Dickens",
+        "incorrecta3": "Fyodor Dostoevsky",
+        "imagen": "/img/hamlet.jpg"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿En qué deporte se utiliza una raqueta y una pelota amarilla?",
+        "respuesta": "Tenis",
+        "incorrecta1": "Golf",
+        "incorrecta2": "Bádminton",
+        "incorrecta3": "Ping pong",
+        "imagen": "/img/deportes.jpg"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué deporte se juega en un campo con un arco y una pelota redonda?",
+        "respuesta": "Fútbol",
+        "incorrecta1": "Rugby",
+        "incorrecta2": "Hockey",
+        "incorrecta3": "Baloncesto"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué deporte practicaba Michael Jordan?",
+        "respuesta": "Baloncesto",
+        "incorrecta1": "Fútbol americano",
+        "incorrecta2": "Golf",
+        "incorrecta3": "Béisbol"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué país ganó la Copa Mundial de Fútbol en 2018?",
+        "respuesta": "Francia",
+        "incorrecta1": "Brasil",
+        "incorrecta2": "Alemania",
+        "incorrecta3": "Argentina"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Cuál es el deporte más popular en Estados Unidos?",
+        "respuesta": "Fútbol americano",
+        "incorrecta1": "Béisbol",
+        "incorrecta2": "Baloncesto",
+        "incorrecta3": "Hockey sobre hielo"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué equipo ganó más títulos de la NBA en la década de 1990?",
+        "respuesta": "Chicago Bulls",
+        "incorrecta1": "Los Angeles Lakers",
+        "incorrecta2": "Boston Celtics",
+        "incorrecta3": "Miami Heat"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Cuántos jugadores hay en un equipo de voleibol en la cancha?",
+        "respuesta": "6",
+        "incorrecta1": "5",
+        "incorrecta2": "7",
+        "incorrecta3": "4"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué equipo ganó la Copa Mundial de Fútbol en 2014?",
+        "respuesta": "Alemania",
+        "incorrecta1": "Brasil",
+        "incorrecta2": "Argentina",
+        "incorrecta3": "España"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Quién es el máximo goleador de la historia del fútbol?",
+        "respuesta": "Pelé",
+        "incorrecta1": "Lionel Messi",
+        "incorrecta2": "Cristiano Ronaldo",
+        "incorrecta3": "Diego Maradona"
+    },
+    {
+        "categoria": "Deporte",
+        "pregunta": "¿Qué deporte se juega en una pista ovalada con patines?",
+        "respuesta": "Patinaje de velocidad",
+        "incorrecta1": "Patinaje artístico",
+        "incorrecta2": "Hockey sobre hielo",
+        "incorrecta3": "Patinaje artístico sobre hielo"
+    }
 ]
+
+
+
+
+
+
