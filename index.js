@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let puntuacionJugador2 = 0;
   let respuestaCorrecta = "";
 
+  //funcion para mezclar array
   function mezclarArreglo(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -11,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     return array;
   }
-
+  //para seleccionar el jugador
   function seleccionarJugador(event) {
     jugadorActual = event.target.dataset.jugador;
     alert("Jugador " + jugadorActual + " ha sido seleccionado.");
   }
-
+  //verifico quien gana y resetea el juego
   function verificarGanador() {
     if (puntuacionJugador1 >= 5) {
       alert("¡Jugador 1 gana la partida!");
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       resetearJuego();
     }
   }
-
+  //pone las puntuaciones en 0 y abre otra pregunta
   function resetearJuego() {
     puntuacionJugador1 = 0;
     puntuacionJugador2 = 0;
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarPregunta();
   }
 
+  //lama la base de datos y si devuelve status 200 con la respuesta carga la pregunta(ya mezclada) usando id
   function cargarPregunta() {
     fetch("base-preguntas.json")
       .then((response) => response.json())
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".btn#btn2").textContent = respuestas[1];
         document.querySelector(".btn#btn3").textContent = respuestas[2];
         document.querySelector(".btn#btn4").textContent = respuestas[3];
-
+        //esto es para saber si la imagen existe y agregarla al div que deberia mostrar la imagen
         const imagenElement = document.querySelector(".imagen");
         if (pregunta.imagen) {
           imagenElement.src = pregunta.imagen;
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           imagenElement.style.display = "none";
         }
-
+        //forEach que recorre todos los botones para verificar la respuesta(lo hice con forEach por si agrego mas opciones)
         document.querySelectorAll(".btn").forEach((button) => {
           button.onclick = verificarRespuesta;
         });
@@ -77,10 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    //los console.log son para prueba de que se ejecuten bien las preguntas/respuestas
     const respuestaSeleccionada = event.target.textContent;
     console.log("La respuesta seleccionada es: " + respuestaSeleccionada);
     console.log("La respuesta correcta es: " + respuestaCorrecta);
-
+    //verificar quien de los jugadores estaba seleccionado y sumar la puntuacion usando comparacion estricta
     if (respuestaSeleccionada === respuestaCorrecta) {
       if (jugadorActual === "1") {
         puntuacionJugador1++;
@@ -92,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     jugadorActual = null; // Resetear jugador actual después de responder
-    verificarGanador();
+    verificarGanador(); //verifico siempre el ganador para que no se pase de 5
     cargarPregunta();
   }
 
